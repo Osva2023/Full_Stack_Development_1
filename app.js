@@ -1,6 +1,7 @@
 require('dotenv').config();
 const Express = require('express');
 const app = Express();
+const cors = require('cors');
 const port = process.env.PORT || 3004;
 
 
@@ -16,6 +17,7 @@ const ContactRouter = require('./src/routes/contact.routes')
 
 app.use(Express.static('./src/public')) //serves our static genesis project
 app.use(Express.json())
+app.use(cors());
 
 
 MiddleWare.registerBaseMiddleWare(app)
