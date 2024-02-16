@@ -9938,5 +9938,16 @@ footer.sticky {
 .clickable-cell {
     cursor: pointer;
     color: blue; /* Cambia el color según tus preferencias */
-    text-decoration: underline; /* Subraya el texto al pasar el ratón */
+     /* Subraya el texto al pasar el ratón */
 }
+#rating-header {
+    cursor: pointer;
+    color: blue; /* Cambia el color según tus preferencias */
+     /* Subraya el texto al pasar el ratón */
+}
+#fee-header {
+    cursor: pointer;
+    color: blue; /* Cambia el color según tus preferencias */
+     /* Subraya el texto al pasar el ratón */
+}
+
