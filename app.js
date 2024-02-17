@@ -11,6 +11,7 @@ const AdminRoutes = require('./src/routes/admin.routes');
 const PublicRoutes = require('./src/routes/public.routes');
 const AgentRoutes = require('./src/routes/agent.routes')
 const regionRouter = require('./src/routes/region.routes')
+const ContactRouter = require('./src/routes/contact.routes')
 
 
 app.use(Express.static('./src/public')) //serves our static genesis project
@@ -23,6 +24,7 @@ AdminRoutes.registerAdminRoutes(app);
 PublicRoutes.registerPublicRoutes(app);
 AgentRoutes.registerAgentRoutes(app)
 regionRouter.registerRegionRoutes(app)
+ContactRouter.registerContactRoutes(app)
 
 
 MongoManager.openMongoConnection();
