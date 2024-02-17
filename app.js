@@ -1,6 +1,7 @@
 require('dotenv').config();
 const Express = require('express');
 const app = Express();
+const cors = require('cors');
 const port = process.env.PORT || 3004;
 
 
@@ -11,10 +12,12 @@ const AdminRoutes = require('./src/routes/admin.routes');
 const PublicRoutes = require('./src/routes/public.routes');
 const AgentRoutes = require('./src/routes/agent.routes')
 const regionRouter = require('./src/routes/region.routes')
+const ContactRouter = require('./src/routes/contact.routes')
 
 
 app.use(Express.static('./src/public')) //serves our static genesis project
 app.use(Express.json())
+app.use(cors());
 
 
 MiddleWare.registerBaseMiddleWare(app)
@@ -23,6 +26,7 @@ AdminRoutes.registerAdminRoutes(app);
 PublicRoutes.registerPublicRoutes(app);
 AgentRoutes.registerAgentRoutes(app)
 regionRouter.registerRegionRoutes(app)
+ContactRouter.registerContactRoutes(app)
 
 
 MongoManager.openMongoConnection();
