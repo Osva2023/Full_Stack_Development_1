@@ -15,11 +15,17 @@ const getAllAgents = asyncWrapper( async (req,res) => {
 const getAgentsByRegion = asyncWrapper( async (req,res) => {
   const regionSelected = req.query.region;
   const agents = await Agent.find({ region: regionSelected.toLowerCase() });
+  
   if(agents.length === 0){
     res.status(404).json({ msg: `No agents found in ${regionSelected}` })
     return;
   }
-  res.status(200).json({ agents });
+if (Array.isArray(agents) ) {
+  res.status(200).send(agents);
+} else {
+  console.error(/Invalid data format. Expected an array./);
+  
+}
 });
 
 const updateAgentInfo = asyncWrapper( async (req,res) => {
