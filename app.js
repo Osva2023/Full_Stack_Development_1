@@ -1,8 +1,10 @@
+//require('dotenv').config({ path: './environment.env' });
 require('dotenv').config();
 const Express = require('express');
 const app = Express();
 const cors = require('cors');
 const port = process.env.PORT || 3004;
+
 
 
 const MongoManager = require('./src/shared/db/mongodb/mongo-manager')
